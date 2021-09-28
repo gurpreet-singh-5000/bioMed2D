@@ -14,7 +14,7 @@ TrainingImagesList = []
 TrainingLabelsList = []
 
 
-for i in range(len(readfolderT)):
+for i in range(int(0.9*len(readfolderT))):
     y_folder = readfolderT[i]
     yread = sitk.ReadImage(y_folder)
     yimage = sitk.GetArrayFromImage(yread)
@@ -24,7 +24,7 @@ for i in range(len(readfolderT)):
     for j in range(x.shape[2]):
         TrainingImagesList.append((x[:184,:224,j]))
 
-for i in range(len(readfolderL)):
+for i in range(int(0.9*len(readfolderL))):
     y_folder = readfolderL[i]
     yread = sitk.ReadImage(y_folder)
     yimage = sitk.GetArrayFromImage(yread)
