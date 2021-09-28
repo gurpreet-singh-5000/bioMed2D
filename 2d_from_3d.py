@@ -6,8 +6,8 @@ import SimpleITK as sitk #reading MR images
 import glob
 
 
-readfolderT = glob.glob('~/Downloads/ADAM/*/pre/TOF.nii.gz')
-readfolderL = glob.glob('~/Downloads/ADAM/*/aneurysms.nii.gz')
+readfolderT = glob.glob('../../../Downloads/ADAM/*/pre/TOF.nii.gz')
+readfolderL = glob.glob('../../../Downloads/ADAM/*/aneurysms.nii.gz')
 
 
 TrainingImagesList = []
@@ -38,10 +38,10 @@ for i in range(len(TrainingImagesList)):
 
     xchangeL = TrainingImagesList[i]
     xchangeL = cv2.resize(xchangeL,(128,128))
-    scipy.misc.imsave('~/Downloads/ADAM2DImgs/'+str(i)+'.png',xchangeL)
+    scipy.misc.imsave('../../../Downloads/ADAM2DImgs/'+str(i)+'.png',xchangeL)
 
 for i in range(len(TrainingLabelsList)):
 
     xchangeL = TrainingLabelsList[i]
     xchangeL = cv2.resize(xchangeL,(128,128))
-    scipy.misc.imsave('~/Downloads/ADAM2DLabels/'+str(i)+'.png',xchangeL)
+    scipy.misc.imsave('../../../Downloads/ADAM2DLabels/'+str(i)+'.png',xchangeL)
